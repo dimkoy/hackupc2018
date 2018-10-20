@@ -1,0 +1,6 @@
+framework module Pods_hackUPC2018 {
+  umbrella header "Pods-hackUPC2018-umbrella.h"
+
+  export *
+  module * { export * }
+}

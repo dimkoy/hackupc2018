@@ -12,6 +12,7 @@
 		0A12017C217B1A59007D26E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A12017A217B1A59007D26E1 /* Main.storyboard */; };
 		0A12017E217B1A5C007D26E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A12017D217B1A5C007D26E1 /* Assets.xcassets */; };
 		0A120181217B1A5C007D26E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A12017F217B1A5C007D26E1 /* LaunchScreen.storyboard */; };
+		7205AC5718B34E33DD7BBA02 /* Pods_hackUPC2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D885EA0286A3B43AF3F9818 /* Pods_hackUPC2018.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0A12017D217B1A5C007D26E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A120180217B1A5C007D26E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A120182217B1A5C007D26E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D885EA0286A3B43AF3F9818 /* Pods_hackUPC2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackUPC2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51589D177FA9AE2EA3F2F33E /* Pods-hackUPC2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackUPC2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-hackUPC2018/Pods-hackUPC2018.release.xcconfig"; sourceTree = "<group>"; };
+		D04A91CBAC4DF95A6013AF18 /* Pods-hackUPC2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackUPC2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hackUPC2018/Pods-hackUPC2018.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7205AC5718B34E33DD7BBA02 /* Pods_hackUPC2018.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0A120175217B1A59007D26E1 /* hackUPC2018 */,
 				0A120174217B1A59007D26E1 /* Products */,
+				92205EE815AAF0917F907422 /* Pods */,
+				4B8C2296B9495F29E09D921C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = hackUPC2018;
 			sourceTree = "<group>";
 		};
+		4B8C2296B9495F29E09D921C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D885EA0286A3B43AF3F9818 /* Pods_hackUPC2018.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92205EE815AAF0917F907422 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D04A91CBAC4DF95A6013AF18 /* Pods-hackUPC2018.debug.xcconfig */,
+				51589D177FA9AE2EA3F2F33E /* Pods-hackUPC2018.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A120185217B1A5C007D26E1 /* Build configuration list for PBXNativeTarget "hackUPC2018" */;
 			buildPhases = (
+				02E6B125B565CDA034F7CE75 /* [CP] Check Pods Manifest.lock */,
 				0A12016F217B1A59007D26E1 /* Sources */,
 				0A120170217B1A59007D26E1 /* Frameworks */,
 				0A120171217B1A59007D26E1 /* Resources */,
+				9C38C6E11DA2FB71DE19358A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02E6B125B565CDA034F7CE75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hackUPC2018-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C38C6E11DA2FB71DE19358A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-hackUPC2018/Pods-hackUPC2018-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hackUPC2018/Pods-hackUPC2018-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A12016F217B1A59007D26E1 /* Sources */ = {
@@ -280,6 +353,7 @@
 		};
 		0A120186217B1A5C007D26E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D04A91CBAC4DF95A6013AF18 /* Pods-hackUPC2018.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +372,7 @@
 		};
 		0A120187217B1A5C007D26E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51589D177FA9AE2EA3F2F33E /* Pods-hackUPC2018.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
