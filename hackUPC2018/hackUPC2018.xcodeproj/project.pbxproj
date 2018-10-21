@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A01EF72217B5C2E00175BF3 /* MainScreenCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EF71217B5C2E00175BF3 /* MainScreenCourseCell.swift */; };
+		0A01EF74217B5C4C00175BF3 /* MainScreenCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A01EF73217B5C4C00175BF3 /* MainScreenCourseCell.xib */; };
+		0A01EF76217B670700175BF3 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01EF75217B670700175BF3 /* CourseModel.swift */; };
 		0A120177217B1A59007D26E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A120176217B1A59007D26E1 /* AppDelegate.swift */; };
 		0A120179217B1A59007D26E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A120178217B1A59007D26E1 /* ViewController.swift */; };
 		0A12017C217B1A59007D26E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A12017A217B1A59007D26E1 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A01EF71217B5C2E00175BF3 /* MainScreenCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCourseCell.swift; sourceTree = "<group>"; };
+		0A01EF73217B5C4C00175BF3 /* MainScreenCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenCourseCell.xib; sourceTree = "<group>"; };
+		0A01EF75217B670700175BF3 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		0A120173217B1A59007D26E1 /* hackUPC2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackUPC2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A120176217B1A59007D26E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A120178217B1A59007D26E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +69,10 @@
 			children = (
 				0A120176217B1A59007D26E1 /* AppDelegate.swift */,
 				0A120178217B1A59007D26E1 /* ViewController.swift */,
+				0A01EF71217B5C2E00175BF3 /* MainScreenCourseCell.swift */,
+				0A01EF73217B5C4C00175BF3 /* MainScreenCourseCell.xib */,
 				0A12017A217B1A59007D26E1 /* Main.storyboard */,
+				0A01EF75217B670700175BF3 /* CourseModel.swift */,
 				0A12017D217B1A5C007D26E1 /* Assets.xcassets */,
 				0A12017F217B1A5C007D26E1 /* LaunchScreen.storyboard */,
 				0A120182217B1A5C007D26E1 /* Info.plist */,
@@ -151,6 +160,7 @@
 				0A120181217B1A5C007D26E1 /* LaunchScreen.storyboard in Resources */,
 				0A12017E217B1A5C007D26E1 /* Assets.xcassets in Resources */,
 				0A12017C217B1A59007D26E1 /* Main.storyboard in Resources */,
+				0A01EF74217B5C4C00175BF3 /* MainScreenCourseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,12 +199,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-hackUPC2018/Pods-hackUPC2018-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cards/Cards.framework",
+				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cards.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -209,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A120179217B1A59007D26E1 /* ViewController.swift in Sources */,
+				0A01EF72217B5C2E00175BF3 /* MainScreenCourseCell.swift in Sources */,
+				0A01EF76217B670700175BF3 /* CourseModel.swift in Sources */,
 				0A120177217B1A59007D26E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
