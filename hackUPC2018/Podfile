@@ -6,5 +6,6 @@ target 'hackUPC2018' do
 
     pod 'Alamofire', '~> 4.7'
     pod 'Cards'
+    pod 'SwiftyJSON', '~> 4.0'
 
 end

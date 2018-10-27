@@ -10,5 +10,19 @@ import Foundation
 
 class CourseModel: NSObject {
     
-    let Name:String! = nil
+    var title:String! = nil
+    var courseDescription:String! = nil
+    var priceValue:Int = 0
+    var courseId:Int = 0
+    var keyword:String! = nil
+    var startDate:String! = nil
+    var duration:Int = 0
+    
+    public func isEqualCourses(_ object: CourseModel) -> Bool {
+        if self.courseId == object.courseId {
+            return true
+        }
+        
+        return false
+    }
 }

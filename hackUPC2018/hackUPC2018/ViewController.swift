@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NetworkDataManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var backgroundView: UIView!
     
-    var courses : Array<Any>? = nil
+    var courses : Array<CourseModel>!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.courses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,12 +26,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.backgroundColor = UIColor.clear
     
-        cell.fillWith("date")
         cell.addContentVC(contentVC: storyboard?.instantiateViewController(withIdentifier: "CardContent"), fromVC: self)
-        
-        
-        cell.backgroundColor = UIColor.clear
-        cell.contentView.backgroundColor = UIColor.clear
+        cell.title = self.courses[indexPath.row].title
+        cell.itemSubtitle = self.courses[indexPath.row].startDate
+        cell.itemTitle = self.courses[indexPath.row].courseDescription
         
         
         return UITableViewCell.init()
@@ -39,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
+         cell.selectionStyle = UITableViewCell.SelectionStyle.none
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -57,8 +56,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.backgroundView.layer.addSublayer(gradient)
         
         self.tableView.register(MainScreenCourseCell.self, forCellReuseIdentifier: "MainScreenCourseCell")
+        
+        let manager = NetworkDataManager.init()
+        self.courses = [];
+        
+        for index in 0...3 {
+            manager.loadCourse(index)
+        }
+        
     }
 
-
+    func networkDataManagerDidLoad(course: CourseModel) {
+       
+        for loadedCourse in self.courses
+        {
+            if (loadedCourse.isEqualCourses(course)) {
+                let index = self.courses.firstIndex(of: loadedCourse)!
+                self.courses.remove(at: index)
+                self.courses.insert(course, at: index)
+            } else {
+                self.courses.append(course)
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    func networkDataManagerDidEndWith(error: String) {
+        
+    }
+    
 }
 
