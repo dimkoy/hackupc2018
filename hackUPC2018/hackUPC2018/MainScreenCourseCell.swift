@@ -12,11 +12,37 @@ import Cards
 class MainScreenCourseCell: UITableViewCell {
     
     var card : CardHighlight!
+    var title: String {
+        get {
+            return self.card.title
+        }
+        set {
+            self.card.title = newValue
+        }
+    }
+    
+    var itemTitle: String {
+        get {
+            return self.card.itemTitle
+        }
+        set {
+            self.card.itemTitle = newValue
+        }
+    }
+    
+    var itemSubtitle: String {
+        get {
+            return self.card.itemSubtitle
+        }
+        set {
+            self.card.itemSubtitle = newValue
+        }
+    }
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super .init(style: style, reuseIdentifier: reuseIdentifier)
         
-  
+        super .init(style: style, reuseIdentifier: reuseIdentifier)
         
         card = CardHighlight(frame: CGRect(x: 15, y: 20, width: UIScreen.main.bounds.width - 30 , height: 240))
         card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 200/255, alpha: 1)
@@ -27,21 +53,12 @@ class MainScreenCourseCell: UITableViewCell {
         card.textColor = UIColor.white
 
         card.hasParallax = false
-        
-        for view in self.contentView.subviews
-        {
-            view.removeFromSuperview()
-        }
 
         self.contentView.addSubview(card)
     }
     
     required init?(coder aDecoder: NSCoder) {
-       
-        super .init(coder: aDecoder)
-        
-        
-
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func prepareForReuse() {
@@ -52,10 +69,5 @@ class MainScreenCourseCell: UITableViewCell {
     
     func addContentVC(contentVC:UIViewController?, fromVC:UIViewController) {
         card.shouldPresent(contentVC, from:fromVC, fullscreen:  false)
-    }
-    
-    func fillWith(_ data:String) {
-
-        
     }
 }
